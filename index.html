@@ -106,11 +106,17 @@
           </div>
         </div>
         <div class="hero-media" aria-hidden="true">
-          <figure class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80" alt="Friends in denim outfits laughing together" loading="lazy">
-          </figure>
+          <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80">
+            <source src="https://cdn.coverr.co/videos/coverr-denim-close-up-4001/1080p.mp4" type="video/mp4">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80" alt="Friends in denim outfits laughing together">
+          </video>
+          <div class="collage collage-left"></div>
+          <div class="collage collage-right"></div>
         </div>
-        <div class="hero-price">From $39.95</div>
+        <div class="hero-price" role="note">
+          <span class="price-label">Denim from</span>
+          <span class="price-value">$39.95</span>
+        </div>
       </div>
     </section>
 
@@ -144,6 +150,36 @@
             <p>More support for youth programs and community initiatives that actually matter to you.</p>
             <a href="#" class="learn-more">See Our Impact →</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Stories Strip -->
+    <section class="story-strip" aria-labelledby="story-strip-title">
+      <div class="container story-grid">
+        <div class="story-media" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
+          <div class="story-overlay"></div>
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">REAL PEOPLE. REAL TALK.</p>
+          <h2 id="story-strip-title">COMMUNITY STYLE NOTES</h2>
+          <p>Our crew rewrote the playbook with you. Here's what they're saying as we get back to denim that actually feels like you.</p>
+          <div class="story-quotes" role="list">
+            <figure class="story-quote" role="listitem">
+              <blockquote>
+                “The new creative team asked us what mattered before they designed a thing. The jeans fit like they listened.”
+              </blockquote>
+              <figcaption>— Maya S., AE Rewards member</figcaption>
+            </figure>
+            <figure class="story-quote" role="listitem">
+              <blockquote>
+                “I sat on their advisory roundtable. Seeing my feedback show up in-store made me trust AE again.”
+              </blockquote>
+              <figcaption>— Jordan P., Community advisor</figcaption>
+            </figure>
+          </div>
+          <a class="btn btn-outline" href="#community">Read More Stories</a>
         </div>
       </div>
     </section>
@@ -304,6 +340,13 @@
             <label class="tab-btn" for="filter-denim">Denim</label>
             <input type="radio" name="product-category" id="filter-outerwear" value="outerwear">
             <label class="tab-btn" for="filter-outerwear">Outerwear</label>
+          </div>
+          <p class="filter-helper">Choose a category to preview curated drops updated daily.</p>
+          <div class="filter-status" aria-live="polite">
+            <span class="status status-all">Showing all collections</span>
+            <span class="status status-tees">Showing tees &amp; hoodies</span>
+            <span class="status status-denim">Showing denim</span>
+            <span class="status status-outerwear">Showing outerwear</span>
           </div>
           <div class="grid-products" aria-live="polite">
             <article class="product" data-category="tees">
@@ -601,11 +644,11 @@
       <div class="container">
         <h2>GET FIRST DIBS</h2>
         <p>Be the first to know about new arrivals, exclusive deals, and events.</p>
-        <form class="signup-form">
-          <input type="email" placeholder="Enter your email" class="email-input" required>
+        <form class="signup-form" aria-describedby="signup-privacy">
+          <input type="email" placeholder="Enter your email" class="email-input" inputmode="email" autocomplete="email" required>
           <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
-        <p class="signup-terms">By signing up, you agree to our Privacy Policy and Terms.</p>
+        <p id="signup-privacy" class="signup-terms">By signing up you agree to our <a href="#">Privacy Policy</a> and can update preferences anytime through your inbox.</p>
       </div>
     </section>
   </main>
