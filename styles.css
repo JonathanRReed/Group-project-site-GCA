@@ -378,6 +378,19 @@ main > section {
   letter-spacing: -2px;
   position: relative;
 }
+.hero-photo {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  outline: 3px dashed rgba(255,255,255,0.3);
+  outline-offset: 12px;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.05);
+}
 .hero-price {
   display: none;
 }
@@ -618,11 +631,12 @@ main > section {
   position: relative;
   aspect-ratio: 3/4;
 }
-.look-image .media-placeholder {
-  border: none;
-  background: var(--ae-wash);
-  color: var(--ae-denim);
-  font-size: 24px;
+.look-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
 }
 
 .media-thumb {
