@@ -7,10 +7,18 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <!-- Announcement Banner -->
-  <div class="announcement-banner">
+  <div class="announcement-banner" role="status" aria-live="polite">
     <div class="container">
-      <p>🚚 FREE SHIPPING on orders $50+ | 🔄 Easy returns | 📍 933 stores nationwide</p>
+      <p class="announcement-copy">
+        <span class="banner-item" data-icon="shipping">Free shipping on orders $50+</span>
+        <span class="banner-separator" aria-hidden="true">•</span>
+        <span class="banner-item" data-icon="returns">Easy returns</span>
+        <span class="banner-separator" aria-hidden="true">•</span>
+        <span class="banner-item" data-icon="stores">933 stores nationwide</span>
+      </p>
     </div>
   </div>
 
@@ -58,16 +66,28 @@
         </div>
 
         <div class="nav-actions">
-          <a class="nav-link" href="#" aria-label="Search">Search</a>
-          <a class="nav-link" href="#" aria-label="Favorites">❤️</a>
-          <a class="nav-link" href="#" aria-label="Cart">Cart (0)</a>
-          <a class="nav-link" href="#" aria-label="Account">Sign In</a>
+          <a class="nav-link" href="#" aria-label="Search">
+            <span class="icon icon-search" aria-hidden="true"></span>
+            <span class="nav-label">Search</span>
+          </a>
+          <a class="nav-link" href="#" aria-label="Favorites">
+            <span class="icon icon-heart" aria-hidden="true"></span>
+            <span class="nav-label">Favorites</span>
+          </a>
+          <a class="nav-link" href="#" aria-label="Cart">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            <span class="nav-label">Cart (0)</span>
+          </a>
+          <a class="nav-link" href="#" aria-label="Account">
+            <span class="icon icon-user" aria-hidden="true"></span>
+            <span class="nav-label">Sign In</span>
+          </a>
         </div>
       </div>
     </nav>
   </header>
 
-  <main id="home">
+  <main id="main-content" tabindex="-1">
     <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
@@ -95,8 +115,8 @@
     <!-- Trust & Values Section -->
     <section id="values" class="trust-values">
       <div class="container">
-        <h2>GETTING BACK TO WHAT MATTERS</h2>
-        <p class="section-intro">You called us out. We're listening. Here's how we're making things right:</p>
+        <h2 id="values-title">GETTING BACK TO WHAT MATTERS</h2>
+        <p class="section-intro">You noticed where we slipped—we noticed too. Here's how we're making things right with actions you can track:</p>
         <div class="cards">
           <article class="card">
             <div class="badge" aria-hidden="true">✓</div>
@@ -132,13 +152,25 @@
         <div class="promo-content">
           <h2>BLACK FRIDAY EARLY ACCESS</h2>
           <p>Get 40% off everything + free shipping on all orders</p>
-          <div class="promo-timer">
-            <span>Ends in:</span>
+          <div class="promo-timer" role="group" aria-label="Sale countdown">
+            <span class="timer-intro">Ends in:</span>
             <div class="timer">
-              <span class="time-block">02<span>Days</span></span>
-              <span class="time-block">14<span>Hrs</span></span>
-              <span class="time-block">27<span>Min</span></span>
-              <span class="time-block">45<span>Sec</span></span>
+              <span class="time-block">
+                <span class="time-value" aria-hidden="true">02</span>
+                <span class="time-label">Days</span>
+              </span>
+              <span class="time-block">
+                <span class="time-value" aria-hidden="true">14</span>
+                <span class="time-label">Hours</span>
+              </span>
+              <span class="time-block">
+                <span class="time-value" aria-hidden="true">27</span>
+                <span class="time-label">Minutes</span>
+              </span>
+              <span class="time-block">
+                <span class="time-value" aria-hidden="true">45</span>
+                <span class="time-label">Seconds</span>
+              </span>
             </div>
           </div>
           <a class="btn btn-primary" href="#">Shop the Sale</a>
@@ -161,7 +193,7 @@
             </div>
             <div class="look-info">
               <h3>Casual Friday Vibe</h3>
-              <p>High-wist jeggings + graphic tee + denim jacket</p>
+              <p>High-waist jeggings + graphic tee + denim jacket</p>
               <div class="look-tags">
                 <span>#AEStyle</span>
                 <span>#DenimDays</span>
@@ -212,183 +244,207 @@
     </section>
 
     <!-- Why Shop With Us -->
-    <section id="trust" class="trust">
+    <section id="trust" class="trust" aria-labelledby="trust-title">
       <div class="container">
-        <h2>WHAE WE'VE ALWAYS BEEN ABOUT</h2>
+        <h2 id="trust-title">WHAT WE'VE ALWAYS BEEN ABOUT</h2>
         <div class="cards">
           <article class="card">
             <h3>DENIM THAT DELIVERS</h3>
             <p>Premium fabrics, fits that actually work, built to last through whatever.</p>
-            <div class="card-features">
-              <span>✓ Stretch Technology</span>
-              <span>✓ Sustainable Denim</span>
-              <span>✓ Perfect Fit Guarantee</span>
-            </div>
+            <ul class="card-features" aria-label="Denim benefits">
+              <li>Stretch technology</li>
+              <li>Sustainable denim</li>
+              <li>Perfect fit guarantee</li>
+            </ul>
           </article>
           <article class="card">
             <h3>FREE SHIPPING & EASY RETURNS</h3>
             <p>No hassle, no stress. If it doesn't work, send it back. Simple.</p>
-            <div class="card-features">
-              <span>✓ Free Shipping $50+</span>
-              <span>✓ 60-Day Returns</span>
-              <span>✓ Free Store Pickup</span>
-            </div>
+            <ul class="card-features" aria-label="Shipping and returns highlights">
+              <li>Free shipping on orders $50+</li>
+              <li>60-day returns</li>
+              <li>Free store pickup</li>
+            </ul>
           </article>
           <article class="card">
             <h3>REAL PEOPLE, REAL HELP</h3>
             <p>Customer service that actually gets it and respects your time.</p>
-            <div class="card-features">
-              <span>✓ 24/7 Chat Support</span>
-              <span>✓ Style Experts</span>
-              <span>✓ Size Match Guarantee</span>
-            </div>
+            <ul class="card-features" aria-label="Support highlights">
+              <li>24/7 chat support</li>
+              <li>Style experts</li>
+              <li>Size match guarantee</li>
+            </ul>
           </article>
           <article class="card">
             <h3>HERE SINCE '77</h3>
             <p>Almost 50 years of making clothes for people like you.</p>
-            <div class="card-features">
-              <span>✓ Heritage Quality</span>
-              <span>✓ Trusted Brand</span>
-              <span>✓ Community Focused</span>
-            </div>
+            <ul class="card-features" aria-label="Brand highlights">
+              <li>Heritage quality</li>
+              <li>Trusted brand</li>
+              <li>Community focused</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Product Categories -->
-    <section id="shop" class="featured">
+    <section id="shop" class="featured" aria-labelledby="shop-title">
       <div class="container">
-        <h2>THE STUFF YOU LOVE</h2>
-        <div class="category-tabs">
-          <button class="tab-btn active" data-category="all">All</button>
-          <button class="tab-btn" data-category="tees">Tees & Hoodies</button>
-          <button class="tab-btn" data-category="denim">Denim</button>
-          <button class="tab-btn" data-category="outerwear">Outerwear</button>
-        </div>
-        <div class="grid-products">
-          <article class="product" data-category="tees">
-            <div class="product-badge">New</div>
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+        <h2 id="shop-title">THE STUFF YOU LOVE</h2>
+        <div class="product-filter">
+          <div class="filter-controls" role="radiogroup" aria-label="Filter products">
+            <input type="radio" name="product-category" id="filter-all" value="all" checked>
+            <label class="tab-btn" for="filter-all">All</label>
+            <input type="radio" name="product-category" id="filter-tees" value="tees">
+            <label class="tab-btn" for="filter-tees">Tees &amp; Hoodies</label>
+            <input type="radio" name="product-category" id="filter-denim" value="denim">
+            <label class="tab-btn" for="filter-denim">Denim</label>
+            <input type="radio" name="product-category" id="filter-outerwear" value="outerwear">
+            <label class="tab-btn" for="filter-outerwear">Outerwear</label>
+          </div>
+          <div class="grid-products" aria-live="polite">
+            <article class="product" data-category="tees">
+              <div class="product-badge">New</div>
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>AE Graphic Tee</h3>
-              <p class="product-price">$24.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #000"></span>
-                <span class="color-dot" style="background: #fff"></span>
-                <span class="color-dot" style="background: #3a5f8a"></span>
-                <span class="color-dot" style="background: #ff3333"></span>
+              <div class="product-info">
+                <h3>AE Graphic Tee</h3>
+                <p class="product-price">$24.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #000"></span>
+                  <span class="color-dot" style="background: #fff"></span>
+                  <span class="color-dot" style="background: #3a5f8a"></span>
+                  <span class="color-dot" style="background: #ff3333"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
-          <article class="product" data-category="denim">
-            <div class="product-badge">Bestseller</div>
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+            </article>
+            <article class="product" data-category="denim">
+              <div class="product-badge">Bestseller</div>
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>High-Wist Jegging</h3>
-              <p class="product-price">$49.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #1e3a5f"></span>
-                <span class="color-dot" style="background: #4a6fa5"></span>
-                <span class="color-dot" style="background: #87ceeb"></span>
-                <span class="color-dot" style="background: #000"></span>
+              <div class="product-info">
+                <h3>High-Waist Jegging</h3>
+                <p class="product-price">$49.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #1e3a5f"></span>
+                  <span class="color-dot" style="background: #4a6fa5"></span>
+                  <span class="color-dot" style="background: #87ceeb"></span>
+                  <span class="color-dot" style="background: #000"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
-          <article class="product" data-category="outerwear">
-            <div class="product-badge">Limited</div>
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+            </article>
+            <article class="product" data-category="outerwear">
+              <div class="product-badge">Limited</div>
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>Denim Jacket</h3>
-              <p class="product-price">$79.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #1e3a5f"></span>
-                <span class="color-dot" style="background: #4a6fa5"></span>
-                <span class="color-dot" style="background: #87ceeb"></span>
+              <div class="product-info">
+                <h3>Denim Jacket</h3>
+                <p class="product-price">$79.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #1e3a5f"></span>
+                  <span class="color-dot" style="background: #4a6fa5"></span>
+                  <span class="color-dot" style="background: #87ceeb"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
-          <article class="product" data-category="tees">
-            <div class="product-badge">Sale</div>
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+            </article>
+            <article class="product" data-category="tees">
+              <div class="product-badge">Sale</div>
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>AE Hoodie</h3>
-              <p class="product-price"><span class="original-price">$59.95</span> $39.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #000"></span>
-                <span class="color-dot" style="background: #808080"></span>
-                <span class="color-dot" style="background: #3a5f8a"></span>
-                <span class="color-dot" style="background: #ff3333"></span>
+              <div class="product-info">
+                <h3>AE Hoodie</h3>
+                <p class="product-price"><span class="original-price">$59.95</span> $39.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #000"></span>
+                  <span class="color-dot" style="background: #808080"></span>
+                  <span class="color-dot" style="background: #3a5f8a"></span>
+                  <span class="color-dot" style="background: #ff3333"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
-          <article class="product" data-category="denim">
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+            </article>
+            <article class="product" data-category="denim">
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>Relax Fit Jean</h3>
-              <p class="product-price">$54.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #1e3a5f"></span>
-                <span class="color-dot" style="background: #4a6fa5"></span>
-                <span class="color-dot" style="background: #87ceeb"></span>
-                <span class="color-dot" style="background: #000"></span>
+              <div class="product-info">
+                <h3>Relaxed Fit Jean</h3>
+                <p class="product-price">$54.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #1e3a5f"></span>
+                  <span class="color-dot" style="background: #4a6fa5"></span>
+                  <span class="color-dot" style="background: #87ceeb"></span>
+                  <span class="color-dot" style="background: #000"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
-          <article class="product" data-category="outerwear">
-            <div class="product-media" aria-hidden="true">
-              <div class="media-thumb">Image</div>
-              <div class="product-quickview">
-                <button class="quickview-btn">Quick View</button>
-                <button class="favorite-btn">❤️</button>
+            </article>
+            <article class="product" data-category="outerwear">
+              <div class="product-media" aria-hidden="true">
+                <div class="media-thumb">Image</div>
+                <div class="product-quickview">
+                  <button class="quickview-btn" type="button">Quick view</button>
+                  <button class="favorite-btn" type="button">
+                    <span class="icon icon-heart" aria-hidden="true"></span>
+                    <span class="sr-only">Save to favorites</span>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="product-info">
-              <h3>Puffer Jacket</h3>
-              <p class="product-price">$89.95</p>
-              <div class="product-colors">
-                <span class="color-dot" style="background: #000"></span>
-                <span class="color-dot" style="background: #3a5f8a"></span>
-                <span class="color-dot" style="background: #ff3333"></span>
+              <div class="product-info">
+                <h3>Puffer Jacket</h3>
+                <p class="product-price">$89.95</p>
+                <div class="product-colors">
+                  <span class="color-dot" style="background: #000"></span>
+                  <span class="color-dot" style="background: #3a5f8a"></span>
+                  <span class="color-dot" style="background: #ff3333"></span>
+                </div>
+                <a class="btn btn-outline" href="#">Shop Now</a>
               </div>
-              <a class="btn btn-outline" href="#">Shop Now</a>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -405,7 +461,7 @@
               <button class="size-option">Slim</button>
               <button class="size-option">Straight</button>
               <button class="size-option">Bootcut</button>
-              <button class="size-option">Relax</button>
+              <button class="size-option">Relaxed</button>
             </div>
             <a href="#" class="size-link">View Detailed Size Chart →</a>
           </div>
@@ -453,12 +509,24 @@
             <button class="btn btn-secondary">Find Events</button>
           </div>
         </div>
-        <div class="stats">
-          <div class="stat"><div class="num">10M+</div><div class="label">Strong</div></div>
-          <div class="stat"><div class="num">933</div><div class="label">Stores</div></div>
-          <div class="stat"><div class="num">1977</div><div class="label">Started</div></div>
-          <div class="stat"><div class="num">$25</div><div class="label">Rewards Sign-up Bonus</div></div>
-        </div>
+        <dl class="stats">
+          <div class="stat">
+            <dt class="stat-number">10M+</dt>
+            <dd class="stat-label">Members strong</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-number">933</dt>
+            <dd class="stat-label">Stores worldwide</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-number">1977</dt>
+            <dd class="stat-label">The year we started</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat-number">$25</dt>
+            <dd class="stat-label">Rewards sign-up bonus</dd>
+          </div>
+        </dl>
         <a class="btn btn-primary" href="#">Join the Movement</a>
       </div>
     </section>
@@ -469,20 +537,21 @@
         <h2>FIND YOUR AE</h2>
         <div class="locator-content">
           <div class="locator-form">
-            <input type="text" placeholder="Enter ZIP code or city" class="locator-input">
+            <label class="sr-only" for="store-search">Enter ZIP code or city</label>
+            <input id="store-search" type="text" placeholder="Enter ZIP code or city" class="locator-input">
             <button class="btn btn-primary">Find Stores</button>
           </div>
           <div class="locator-features">
             <div class="feature-item">
-              <span class="feature-icon">📍</span>
+              <span class="icon icon-location" aria-hidden="true"></span>
               <span>933 stores nationwide</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">🚚</span>
+              <span class="icon icon-delivery" aria-hidden="true"></span>
               <span>Free store pickup</span>
             </div>
             <div class="feature-item">
-              <span class="feature-icon">⏰</span>
+              <span class="icon icon-clock" aria-hidden="true"></span>
               <span>Extended holiday hours</span>
             </div>
           </div>
@@ -592,9 +661,12 @@
             <a href="#">California Transparency</a>
           </div>
         </div>
-        <div class="footer-payment">
-          <span>Accepted Payment:</span>
-          <span>💳 💳 💳 💳</span>
+        <div class="footer-payment" role="list" aria-label="Accepted payment methods">
+          <span class="payment-label">Accepted payment:</span>
+          <span class="payment-item">Visa</span>
+          <span class="payment-item">Mastercard</span>
+          <span class="payment-item">American Express</span>
+          <span class="payment-item">PayPal</span>
         </div>
       </div>
     </div>

@@ -1,0 +1,17 @@
+# OS artifacts
+.DS_Store
+
+# Build output
+/dist/
+/build/
+
+# Dependencies
+/node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Editor directories
+.vscode/
+.idea/
