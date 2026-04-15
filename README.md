@@ -55,3 +55,8 @@ open index.html
 ## Attribution
 
 This redesign is an educational exercise and is not affiliated with American Eagle Outfitters. All product imagery is represented by placeholders.
+
+## License
+
+The source code in this repository is licensed under MIT. Brand names and
+trademarks are excluded. See [`LICENSE`](./LICENSE) and [`NOTICE.md`](./NOTICE.md).
